@@ -1,0 +1,96 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+<main role="main">
+   <section class="jumbotron">
+        <div class="container">
+
+        <!-- Row 1 -->
+            <div class="row">
+
+                <!-- Column 1 -->
+                <div class="col-sm-6">
+                    <br> <h3>Personal Info</h3> <hr>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="firstname">First Name: </label>
+                            <input type="firstname" class="form-control" id="firstname" placeholder="First Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Last Name: </label>
+                            <input type="lastname" class="form-control" id="lastname" placeholder="Last Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address: </label>
+                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                        </div>
+
+                    </form>
+                </div>
+
+
+                <!-- Column 2 -->
+                <div class="col-sm-6">
+                    <br> <h3>Account Info</h3> <hr>
+
+                    <form>
+
+                        <div class="form-group">
+                            <label for="password">Username: </label>
+                            <input type="password" class="form-control" id="username" placeholder="Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password: </label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file">Upload a Profile Photo: </label> <br>
+                            <input type="file" id="file">
+                        </div>
+
+                    </form>                 
+                </div>
+
+            </div>
+        <!-- End Row 1 -->
+
+
+        <!-- Row 2 -->
+            <div class="row justify-content-center">
+
+                <!-- Terms and Conditions Checkbox-->
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="mr-2">I agree to the Terms and Conditions
+                    </label>
+                </div>
+
+            </div>
+        <!-- End Row 2 -->
+
+        <!-- Row 3 -->
+            <div class="row justify-content-center">
+
+                <!-- Sign Up & Cancel Buttons -->
+                <div class="btn-toolbar">
+                    <form method="get" action="/master">
+                        <button type="submit" class="btn btn-secondary mr-2">Sign Up</button>
+                    </form>
+
+                    <form method="get" action="/">
+                        <button class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+
+            </div>
+        <!-- End Row 3 -->
+
+    </section>
+</main>
+
+<% include partials/footer.ejs %>
