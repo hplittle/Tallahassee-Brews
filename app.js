@@ -23,3 +23,23 @@ app.get('/signup', function(req, res) {
 app.get('/master', function(req, res) {
 	res.render('master');
 });
+
+//proof page
+app.get('/proof', function(req, res) {
+	res.render('proof');
+});
+
+//grasslands page
+app.get('/grasslands', function(req, res) {
+	res.render('grasslands');
+});
+
+//deep page
+app.get('/deep', function(req, res) {
+	res.render('deep');
+});
+
+//ology page
+app.get('/ology', function(req, res) {
+	res.render('ology');
+});
