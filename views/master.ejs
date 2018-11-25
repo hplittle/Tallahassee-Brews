@@ -3,34 +3,87 @@
 
 
 <main role="main">
-   <section class="jumbotron">
-        <div class="container">
 
-       		<!-- Row 1 -->
-            <div class="row">
-
-	            <!-- Column 1 -->
-	            <div class="col-6 mt-4"
-					<h1 class="display-4">Master List</h1>
-					<hr>
+	<!-- Jumbotron -->
+   <section class="jumbotron mt-4">
+        	<h1 class="display-4">Master List</h1><hr>
+   	</selection>
+   	<!-- End Jumbotron -->
 
 
+	<!-- Cards -->
+	<div class="container">
+
+		<!-- Row 1 -->
+		<div class="row">
+
+			<!-- Proof -->
+			<div class="col-6">
+				<div class="card">
+  					<img class="card-img-top" src="images/proof-logo.png" alt="Proof">
+  					<div class="card-body">
+	    				<h4 class="card-title">Proof Brewing Company</h4>
+	    				<p class="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    				<a href="/proof" class="btn btn-primary">See More</a>
+	  				</div>
 				</div>
-				<!-- End Column 1 -->
+			</div>
+			<!-- End Proof -->
 
-				<!-- Column 2 -->
-				<div class="col-6 mt-4"
-					<div class="mapouter">
-						<div class="gmap_canvas">
-							<iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=proof%20brewing%20company%20tallahassee&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-							<a href="https://www.pureblack.de"></a>
-						</div>
-					</div>
+       		
+       		<!-- GrassLands -->
+       		<div class="col-6">
+				<div class="card">
+	  				<img class="card-img-top" src="images/grasslands-logo.jpg" alt="GrassLands">
+	  				<div class="card-body">
+		    			<h4 class="card-title">GrassLands Brewing Company</h4>
+		    			<p class="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    			<a href="/grasslands" class="btn btn-primary">See More</a>
+		  			</div>
 				</div>
-				<!-- End Column 2 -->
+			</div>
+       		<!-- End GrassLands -->
 
 		</div>
-	</selection>
+		<!-- End Row 1 -->
+
+
+		<!-- Row 2 -->
+		<div class="row mt-4">
+
+			<!-- DEEP -->
+			<div class="col-6">
+				<div class="card">
+  					<img class="card-img-top" src="images/deep-logo.jpg" alt="Deep">
+  					<div class="card-body">
+	    				<h4 class="card-title">DEEP Brewing Company</h4>
+	    				<p class="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    				<a href="/deep" class="btn btn-secondary">See More</a>
+	  				</div>
+				</div>
+			</div>
+			<!-- End DEEP -->
+
+       		
+       		<!-- Ology -->
+       		<div class="col-6">
+				<div class="card">
+	  				<img class="card-img-top" src="images/ology-logo.png" alt="Ology">
+	  				<div class="card-body">
+		    			<h4 class="card-title">Ology Brewing Company</h4>
+		    			<p class="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    			<a href="/ology" class="btn btn-secondary">See More</a>
+		  			</div>
+				</div>
+			</div>
+       		<!-- End Ology -->
+
+		</div>
+		<!-- End Row 1 -->
+
+	</div>
+	<!-- End Container -->
+
 </main>
 
 <% include partials/footer.ejs %>
