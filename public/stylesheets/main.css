@@ -92,3 +92,19 @@ footer {
 .card img {
 	height:350px;
 }
+
+.card-body h1, h2, h3, h4 {
+	color: #53687E;
+}
+
+.card-body p {
+	color: #3A4454;
+}
+
+.card .btn {
+	background-color: #2B4162 !important;
+    color: #FFFFFa;
+}
+
+.card .btn:hover {
+    color: #A6A6A8;
