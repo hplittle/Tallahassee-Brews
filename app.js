@@ -17,17 +17,6 @@ app.get('/', function(req, res) {
 
 
 //ROUTES
-//sign up button
-app.get('/signup', function(req, res) {
-	res.render('dashboard');
-	//add user authentication with Firebase
-});
-//login button
-app.get('/login', function(req, res) {
-	res.render('dashboard');
-	//add user authentication with Firebase
-});
-
 //sign up page
 app.get('/signup', function(req, res) {
 	res.render('signup');
