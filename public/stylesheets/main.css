@@ -9,7 +9,7 @@ body {
     margin-bottom: 40px;
 }
 
-body h1, h2, h3 {
+body h1, h2, h3, h4 {
   color: #2B4162;
 }
 
@@ -72,21 +72,31 @@ footer {
 
 .mapouter {
 	text-align:center;
-	height:400px;
-	width:500px;
+	height:450px;
+	width:450px;
 }
 
 .gmap_canvas {
 	overflow:hidden;
 	background:none!important;
-	height:400px;
-	width:500px;
+	height:450px;
+	width:450px;
 }
 
 #title h1 {
 	font-size: 30px !important;
 	color: #53687E;
 	font-style: italic;
+}
+
+#tap h1 {
+	font-size: 30px !important;
+	color: #53687E;
+	font-style: italic;
+}
+
+#beers h1 {
+    font-style: uppercase;
 }
 
 .card img {
@@ -117,4 +127,8 @@ footer {
    width: auto;
    width: 800px !important;
    height: 500px;
+}
+
+#hours {
+    width: 250px;
 }
