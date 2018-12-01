@@ -15,6 +15,12 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
+//routes folder for JS files
+const {create} = require('./routes/create');
+const {login} = require('./routes/login');
+app.get('/createuser', create);
+app.get('/login', login);
+
 
 //ROUTES
 //sign up page
