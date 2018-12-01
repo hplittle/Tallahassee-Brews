@@ -16,8 +16,7 @@ app.get('/', function(req, res) {
 });
 
 //routes folder for JS files
-const {create} = require('./routes/create');
-const {login} = require('./routes/login');
+const {create, login} = require('./routes/user');
 app.get('/createuser', create);
 app.get('/login', login);
 
