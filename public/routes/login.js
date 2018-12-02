@@ -2,8 +2,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-    document.getElementById("login-form").style.display = "block";
-    document.getElementById("logout-form").style.display = "none";
+    document.getElementById("logout-form").style.display = "block";
+    document.getElementById("login-form").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
@@ -17,8 +17,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
     // No user is signed in.
 
-    document.getElementById("login-form").style.display = "none";
-    document.getElementById("logout-form").style.display = "block";
+    document.getElementById("logout-form").style.display = "none";
+    document.getElementById("login-form").style.display = "block";
 
   }
 });
