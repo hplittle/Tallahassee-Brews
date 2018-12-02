@@ -19,7 +19,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     document.getElementById("logout-form").style.display = "none";
     document.getElementById("login-form").style.display = "block";
-
   }
 });
 
