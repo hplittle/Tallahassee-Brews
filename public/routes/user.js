@@ -80,7 +80,7 @@ function loginUser(event) {
 document.querySelector('#login-form').addEventListener('submit', loginUser);
 */
 const config = {
-  apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
  authDomain: "tallahassee-brews.firebaseapp.com",
  databaseURL: "https://tallahassee-brews.firebaseio.com",
  projectId: "tallahassee-brews",
@@ -89,25 +89,24 @@ const config = {
 };
 firebase.initializeApp(config);
 
-function createUser(event) {
+function alertEvent(event) {
 
     event.preventDefault();
 
     const form = event.target;
-    const email = form.username.value;
+    const email = form.email.value;
     const password = form.password.value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function (response) {
-            const output = document.querySelector("#output");
-            output.innerHTML = 'User has been created';
+            //alert("user Created");
         })
         .catch(function (error) {
             alert(error);
         });
 
-    const url = new URL('http://localhost:8081/createUser');
-    let params = {username: username, password: password};
+    const url = new URL('http://localhost:3000/proof');
+    let params = {email: email, password: password};
 }
 
-document.querySelector('#create-form').addEventListener('submit', createUser);
+document.querySelector('#create-form').addEventListener('submit', alertEvent);

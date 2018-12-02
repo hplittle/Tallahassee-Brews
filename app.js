@@ -3,6 +3,10 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var firebase = require('firebase');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
 var config = {
 		apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
 		authDomain: "tallahassee-brews.firebaseapp.com",
