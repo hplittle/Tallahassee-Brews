@@ -99,13 +99,13 @@ function alertEvent(event) {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function (response) {
-            //alert("user Created");
+            alert("user Created");
         })
         .catch(function (error) {
             alert(error);
         });
 
-    const url = new URL('http://localhost:3000/proof');
+    const url = new URL('http://localhost:3000/master');
     let params = {email: email, password: password};
 }
 
