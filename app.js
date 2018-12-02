@@ -1,11 +1,28 @@
 //REQUIRED
 var express = require('express');
 var app = express();
-var path = require('path')
+var path = require('path');
+var firebase = require('firebase');
+var config = {
+		apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+		authDomain: "tallahassee-brews.firebaseapp.com",
+		databaseURL: "https://tallahassee-brews.firebaseio.com",
+		storageBucket: "tallahassee-brews.appspot.com",
+};
+firebase.initializeApp(config);
+
+const admin = require("firebase-admin");
+const serviceAccount = require("./serviceAccountKey.json");
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://tallahassee-brews.firebaseio.com"
+});
+
 app.set('view engine', 'ejs');
 
 app.listen(3000);
 console.log('listening on port 3000')
+
 
 //use public folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -16,9 +33,9 @@ app.get('/', function(req, res) {
 });
 
 //routes folder for JS files
-const {create, login} = require('./routes/user');
+/*const {create, login} = require('./routes/user');
 app.get('/createuser', create);
-app.get('/login', login);
+app.get('/login', login);*/
 
 
 //ROUTES
