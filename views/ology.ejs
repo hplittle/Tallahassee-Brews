@@ -27,8 +27,8 @@
 							<div class="col">
 								<h1 class="card-title">Sensory Overload</h1>
 							</div>
-							<div class="col text-right"  id= "clickBtn">
-								<button type="click"><a class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a></button>
+							<div class="col text-right">
+								<a id="sensoryOver" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<h1 class="card-title">Tesla's Pigeon</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id= "teslasPig" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -265,9 +265,25 @@
 			storageBucket: "tallahassee-brews.appspot.com",
 	};
 	firebase.initializeApp(config);
-	const firebaseRef = firebase.database().ref().child("Text");
+	const firebaseRef = firebase.database().ref().child("Ology");
+	$('#sensoryOver').click(function(){
+		firebaseRef.set("Sensory Overload");
+		window.alert("hooray");
+	})
+	$('#teslasPig').click(function(){
+		firebaseRef.set("Tesla's Pigeon");
+		window.alert("hooray");
+	})
 	$('#clickBtn').click(function(){
 		firebaseRef.set("beer one");
-		window.alert("hooray");
+	})
+	$('#clickBtn').click(function(){
+		firebaseRef.set("beer one");
+	})
+	$('#clickBtn').click(function(){
+		firebaseRef.set("beer one");
+	})
+	$('#clickBtn').click(function(){
+		firebaseRef.set("beer one");
 	})
 </script>
