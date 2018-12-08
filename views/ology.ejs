@@ -267,11 +267,11 @@
 	firebase.initializeApp(config);
 	const firebaseRef = firebase.database().ref().child("Ology");
 	$('#sensoryOver').click(function(){
-		firebaseRef.set("Sensory Overload");
+		firebaseRef.push("Sensory Overload");
 		window.alert("hooray");
 	})
 	$('#teslasPig').click(function(){
-		firebaseRef.set("Tesla's Pigeon");
+		firebaseRef.push("Tesla's Pigeon");
 		window.alert("hooray");
 	})
 	$('#clickBtn').click(function(){
