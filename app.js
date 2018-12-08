@@ -7,13 +7,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var config = {
-		apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
-		authDomain: "tallahassee-brews.firebaseapp.com",
-		databaseURL: "https://tallahassee-brews.firebaseio.com",
-		storageBucket: "tallahassee-brews.appspot.com",
-};
-firebase.initializeApp(config);
+
+const multer = require('multer');
+let upload = multer({storage: multer.memoryStorage()});
 
 const admin = require("firebase-admin");
 const serviceAccount = require("./serviceAccountKey.json");
@@ -70,4 +66,14 @@ app.get('/deep', function(req, res) {
 //ology page
 app.get('/ology', function(req, res) {
 	res.render('ology');
+});
+
+app.post('/process', multer().none(), function (req, res) {
+
+    // Get a reference to the object "examples" in Firebase
+    const examples = db.ref('examples');
+    //Push the form data as a new record/object inside the examples object
+    examples.push(req.body);
+    //Reply with a generic JSON response
+    res.json(JSON.stringify({message: 'Done!'}));
 });

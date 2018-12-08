@@ -27,8 +27,8 @@
 							<div class="col">
 								<h1 class="card-title">Sensory Overload</h1>
 							</div>
-							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+							<div class="col text-right"  id= "clickBtn">
+								<button type="click"><a class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a></button>
 							</div>
 						</div>
 
@@ -255,5 +255,19 @@
 	</div>
 	<!-- End Container -->
 </main>
-
 <% include partials/footer.ejs %>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+	const config = {
+			apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+			authDomain: "tallahassee-brews.firebaseapp.com",
+			databaseURL: "https://tallahassee-brews.firebaseio.com",
+			storageBucket: "tallahassee-brews.appspot.com",
+	};
+	firebase.initializeApp(config);
+	const firebaseRef = firebase.database().ref().child("Text");
+	$('#clickBtn').click(function(){
+		firebaseRef.set("beer one");
+		window.alert("hooray");
+	})
+</script>
