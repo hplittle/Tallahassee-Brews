@@ -28,7 +28,7 @@
 								<h1 class="card-title">Spear Pressure</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="spearPres" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<h1 class="card-title">Reef Dweller</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="reefDwel" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -66,7 +66,7 @@
 								<h1 class="card-title">NYCTOPHILE</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="nycto" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -85,7 +85,7 @@
 								<h1 class="card-title">Chamber Goat</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="chamGoat" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -104,7 +104,7 @@
 								<h1 class="card-title">Sublime Keylime</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="subKey" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -123,7 +123,7 @@
 								<h1 class="card-title">Tan in a Can</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="tiaCan" class="btn btn-small btn-secondary" href="/deep"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -256,3 +256,51 @@
 </main>
 
 <% include partials/footer.ejs %>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+	const config = {
+			apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+			authDomain: "tallahassee-brews.firebaseapp.com",
+			databaseURL: "https://tallahassee-brews.firebaseio.com",
+			storageBucket: "tallahassee-brews.appspot.com",
+	};
+	firebase.initializeApp(config);
+	const firebaseRef = firebase.database().ref().child("Deep");
+	$('#spearPres').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Spear Pressure"
+		});
+	});
+	$('#reefDwel').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Reef Dweller"
+		});
+	});
+	$('#nycto').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"NYCTOPHILE"
+		});
+	});
+	$('#chamGoat').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Chamber Goat"
+		});
+	});
+	$('#subKey').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Sublime Keylime"
+		});
+	});
+	$('#tiaCan').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Tan in a Can"
+		});
+		window.alert("hooray");
+	});
+</script>

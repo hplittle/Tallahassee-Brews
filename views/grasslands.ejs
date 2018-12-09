@@ -28,7 +28,7 @@
 								<h1 class="card-title">Hopline Bling</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="hopBling" class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<h1 class="card-title">G-Street IPA</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="gsIpa" class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -66,7 +66,7 @@
 								<h1 class="card-title">Guava Gold</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="guavGold" class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -85,7 +85,7 @@
 								<h1 class="card-title">Fourth Orbit</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="fourOrbit" class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -104,7 +104,7 @@
 								<h1 class="card-title">Firedrake</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="fireDrake"class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -123,7 +123,7 @@
 								<h1 class="card-title">Wubba Lubba Dub Dub</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="wldDub" class="btn btn-small btn-secondary" href="/grasslands"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -256,3 +256,51 @@
 </main>
 
 <% include partials/footer.ejs %>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+	const config = {
+			apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+			authDomain: "tallahassee-brews.firebaseapp.com",
+			databaseURL: "https://tallahassee-brews.firebaseio.com",
+			storageBucket: "tallahassee-brews.appspot.com",
+	};
+	firebase.initializeApp(config);
+	const firebaseRef = firebase.database().ref().child("Grasslands");
+	$('#hopBling').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Hopline Bling"
+		});
+	});
+	$('#gsIpa').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"G-Street IPA"
+		});
+	});
+	$('#guavGold').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Guava Gold"
+		});
+	});
+	$('#fourOrbit').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Fourth Orbit"
+		});
+	});
+	$('#fireDrake').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Firedrake"
+		});
+	});
+	$('#wldDub').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Wubba Lubba Dub Dub"
+		});
+		window.alert("hooray");
+	});
+</script>

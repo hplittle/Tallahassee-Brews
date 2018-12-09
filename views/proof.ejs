@@ -28,7 +28,7 @@
 								<h1 class="card-title">EightFive-O</h1>
 							</div>
 							<div class="col text-right">
-								<a id="eightFive" class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="eightFive" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<h1 class="card-title">Mango Wit</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="mangoWit" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -66,7 +66,7 @@
 								<h1 class="card-title">La La Land</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="laLand" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -85,7 +85,7 @@
 								<h1 class="card-title">Lager</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="lager" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -104,7 +104,7 @@
 								<h1 class="card-title">Creatures in the Dark</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="citDark" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -123,7 +123,7 @@
 								<h1 class="card-title">Ghost Totem</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="ghostTot" class="btn btn-small btn-secondary" href="/proof"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -266,23 +266,40 @@
 	firebase.initializeApp(config);
 	const firebaseRef = firebase.database().ref().child("Proof");
 	$('#eightFive').click(function(){
-		firebaseRef.set("Eight Five-O");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"EightFive-O"
+		});
+	});
+	$('#mangoWit').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Mongo Wit"
+		});
+	});
+	$('#laLand').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Problem Solver"
+		});
+	});
+	$('#lager').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Lager"
+		});
+	});
+	$('#citDark').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"City in the Dark"
+		});
+	});
+	$('#ghostTot').click(function(){
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Ghost Totem"
+		});
 		window.alert("hooray");
-	})
-	$('#teslasPig').click(function(){
-		firebaseRef.set("Tesla's Pigeon");
-		window.alert("hooray");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
+	});
 </script>
