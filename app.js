@@ -7,6 +7,15 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+var config = {
+	apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+	authDomain: "tallahassee-brews.firebaseapp.com",
+	databaseURL: "https://tallahassee-brews.firebaseio.com",
+	projectId: "tallahassee-brews",
+	storageBucket: "tallahassee-brews.appspot.com",
+	messagingSenderId: "144546056897"
+};
+firebase.initializeApp(config);
 
 const multer = require('multer');
 let upload = multer({storage: multer.memoryStorage()});

@@ -20,8 +20,25 @@
         <div class="navbar-nav">
             <form class="form-inline" method="get" action="/">
                 <div class="form-group ml-4">
-                    <button class="btn btn-sm" id="logout-btn">Logout</button>
+                    <button class="btn btn-sm" id="logout-btn"  onclick="logout()">Logout</button>
                 </div>
             </form>
         </div>
 </nav>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+    authDomain: "tallahassee-brews.firebaseapp.com",
+    databaseURL: "https://tallahassee-brews.firebaseio.com",
+    projectId: "tallahassee-brews",
+    storageBucket: "tallahassee-brews.appspot.com",
+    messagingSenderId: "144546056897"
+  };
+  firebase.initializeApp(config);
+
+  function logout(){
+    firebase.auth().signOut();
+  }
+  </script>
