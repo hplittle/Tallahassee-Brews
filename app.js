@@ -67,13 +67,3 @@ app.get('/deep', function(req, res) {
 app.get('/ology', function(req, res) {
 	res.render('ology');
 });
-
-app.post('/process', multer().none(), function (req, res) {
-
-    // Get a reference to the object "examples" in Firebase
-    const examples = db.ref('examples');
-    //Push the form data as a new record/object inside the examples object
-    examples.push(req.body);
-    //Reply with a generic JSON response
-    res.json(JSON.stringify({message: 'Done!'}));
-});

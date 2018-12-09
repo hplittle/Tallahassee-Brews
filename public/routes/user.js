@@ -88,26 +88,3 @@ apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
  messagingSenderId: "144546056897"
 };
 firebase.initializeApp(config);
-
-function alertEvent(event) {
-
-    event.preventDefault();
-
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function (response) {
-            alert("user Created");
-            window.location='master';
-        })
-        .catch(function (error) {
-            alert(error);
-        });
-
-
-    let params = {email: email, password: password};
-}
-
-document.querySelector('#create-form').addEventListener('submit', alertEvent);

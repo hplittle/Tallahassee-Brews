@@ -1,20 +1,6 @@
 <% include partials/header.ejs %>
 <% include partials/simplenav.ejs %>
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
-    authDomain: "tallahassee-brews.firebaseapp.com",
-    databaseURL: "https://tallahassee-brews.firebaseio.com",
-    projectId: "tallahassee-brews",
-    storageBucket: "tallahassee-brews.appspot.com",
-    messagingSenderId: "144546056897"
-  };
-  firebase.initializeApp(config);
-</script>
-<script rel="script" type="text/javascript" src="/routes/data.js" defer></script>
-<script rel="script" type="text/javascript" src="/routes/user.js" defer></script>
+
 <main role="main">
     <section class="jumbotron">
         <div class="container">
@@ -88,3 +74,38 @@
     </section>
 </main>
 <% include partials/footer.ejs %>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAcIMW1HXU3OC9-ZfC06Dc5fu7b7pjXL1Q",
+    authDomain: "tallahassee-brews.firebaseapp.com",
+    databaseURL: "https://tallahassee-brews.firebaseio.com",
+    projectId: "tallahassee-brews",
+    storageBucket: "tallahassee-brews.appspot.com",
+    messagingSenderId: "144546056897"
+  };
+  firebase.initializeApp(config);
+  function alertEvent(event) {
+
+      event.preventDefault();
+
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(function (response) {
+              alert("user Created");
+              window.location='master';
+          })
+          .catch(function (error) {
+              alert(error);
+          });
+
+
+      let params = {email: email, password: password};
+  }
+document.querySelector('#create-form').addEventListener('submit', alertEvent);
+
+</script>
