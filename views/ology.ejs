@@ -267,23 +267,40 @@
 	firebase.initializeApp(config);
 	const firebaseRef = firebase.database().ref().child("Ology");
 	$('#sensoryOver').click(function(){
-		firebaseRef.push("Sensory Overload");
-		window.alert("hooray");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Sensory Overload"
+		});
 	});
 	$('#teslasPig').click(function(){
-		firebaseRef.push("Tesla's Pigeon");
-		window.alert("hooray");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Tesla's Pigeon"
+		});
 	});
 	$('#probSolv').click(function(){
-		firebaseRef.push("Problem Solver");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Problem Solver"
+		});
 	});
 	$('#sprinkFact').click(function(){
-		firebaseRef.push("Sprinkle Factory");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Sprinkle Factory"
+		});
 	});
 	$('#quantStimi').click(function(){
-		firebaseRef.push("Quantum Stimuli");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Quantum Stimuli"
+		});
 	});
 	$('#quantStimant').click(function(){
-		firebaseRef.push("Quantum Stimulant");
+		const beer=firebaseRef.push();
+		beer.set({
+			beer:"Quantum Stimulant"
+		});
+		window.alert("hooray");
 	});
 </script>
