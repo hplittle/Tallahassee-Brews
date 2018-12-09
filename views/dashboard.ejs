@@ -48,8 +48,20 @@
 	};
 	firebase.initializeApp(config);
 
-	const firebaseRef = firebase.database().ref().child("Ology");
-  firebaseRef.on('child_added', snap => {
+	const ologyRef = firebase.database().ref().child("Ology");
+  ologyRef.on('child_added', snap => {
     $("#ologyBeers").append("<li>" + snap.child("beer").val() + "</li>");
+  });
+  const proofRef = firebase.database().ref().child("Proof");
+  proofRef.on('child_added', snap => {
+    $("#proofBeers").append("<li>" + snap.child("beer").val() + "</li>");
+  });
+  const grslndRef = firebase.database().ref().child("Grasslands");
+  grslndRef.on('child_added', snap => {
+    $("#grslndBeers").append("<li>" + snap.child("beer").val() + "</li>");
+  });
+  const deepRef = firebase.database().ref().child("Deep");
+  deepRef.on('child_added', snap => {
+    $("#deepBeers").append("<li>" + snap.child("beer").val() + "</li>");
   });
   </script>
