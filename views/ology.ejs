@@ -66,7 +66,7 @@
 								<h1 class="card-title">Problem Solver</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="probSolv" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -85,7 +85,7 @@
 								<h1 class="card-title">Sprinkle Factor</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="sprinkFact" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -104,7 +104,7 @@
 								<h1 class="card-title">Quantum Stimuli</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="quantStimi" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -123,7 +123,7 @@
 								<h1 class="card-title">Quantum Stimulant</h1>
 							</div>
 							<div class="col text-right">
-								<a class="btn btn-small btn-secondary" href="/star"><i class="icon-star-empty"></i>Star</a>
+								<a id="quantStimant" class="btn btn-small btn-secondary" href="/ology"><i class="icon-star-empty"></i>Star</a>
 							</div>
 						</div>
 
@@ -269,21 +269,21 @@
 	$('#sensoryOver').click(function(){
 		firebaseRef.push("Sensory Overload");
 		window.alert("hooray");
-	})
+	});
 	$('#teslasPig').click(function(){
 		firebaseRef.push("Tesla's Pigeon");
 		window.alert("hooray");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
-	$('#clickBtn').click(function(){
-		firebaseRef.set("beer one");
-	})
+	});
+	$('#probSolv').click(function(){
+		firebaseRef.push("Problem Solver");
+	});
+	$('#sprinkFact').click(function(){
+		firebaseRef.push("Sprinkle Factory");
+	});
+	$('#quantStimi').click(function(){
+		firebaseRef.push("Quantum Stimuli");
+	});
+	$('#quantStimant').click(function(){
+		firebaseRef.push("Quantum Stimulant");
+	});
 </script>

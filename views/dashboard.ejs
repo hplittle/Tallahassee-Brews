@@ -45,13 +45,12 @@
 			storageBucket: "tallahassee-brews.appspot.com",
 	};
 	firebase.initializeApp(config);
-
+  
 	const firebaseRef = firebase.database().ref().child("Ology");
   $("#loadBeer").click(function(){
   firebaseRef.on('child_added', snap => {
-    const beer =snap.value;
-    $("#loadedBeers").append("<h1>" + beer + "</h1>");
-    window.alert("hooray");
+    $("#loadedBeers").append("<h3>" + snap.value + "</h3>");
   });
+    window.alert("hooray");
   });
   </script>
